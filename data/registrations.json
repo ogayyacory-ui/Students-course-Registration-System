@@ -1,0 +1,22 @@
+[
+  {
+    "student_id": "S001",
+    "course_id": "PY101"
+  },
+  {
+    "student_id": "S002",
+    "course_id": "JS101"
+  },
+  {
+    "student_id": "S003",
+    "course_id": "DS101"
+  },
+  {
+    "student_id": "S004",
+    "course_id": "WD101"
+  },
+  {
+    "student_id": "S005",
+    "course_id": "ML101"
+  }
+]

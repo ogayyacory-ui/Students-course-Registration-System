@@ -1,0 +1,32 @@
+[
+  {
+    "student_id": "S001",
+    "name": "Mary Wanjiku",
+    "email": "mary@example.com",
+    "phone_number": "0711111111"
+  },
+  {
+    "student_id": "S002",
+    "name": "John Mwangi",
+    "email": "john@example.com",
+    "phone_number": "0722222222"
+  },
+  {
+    "student_id": "S003",
+    "name": "Alice Njeri",
+    "email": "alice@example.com",
+    "phone_number": "0733333333"
+  },
+  {
+    "student_id": "S004",
+    "name": "Bob Otieno",
+    "email": "bob@example.com",
+    "phone_number": "0744444444"
+  },
+  {
+    "student_id": "S005",
+    "name": "Eve Kimani",
+    "email": "eve@example.com",
+    "phone_number": "0755555555"
+  }
+]
