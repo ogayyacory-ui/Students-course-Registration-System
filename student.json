@@ -1,0 +1,12 @@
+{
+    "students": [
+        {
+            "student_id": "s008",
+            "name": "kimani wafula",
+            "email": "kimani@example.com",
+            "phone_number": "0799999999"
+        }
+    ],
+    "courses": [],
+    "registrations": []
+}

@@ -1,10 +1,13 @@
+"""Entry point for the Student Course Registration System."""
+
 from services.school_system import SchoolSystem
 from models.student import Student
 from models.course import Course
 
 
 def display_menu():
-    print("\n===== Student Course Registration System =====")
+    # Displays the main menu options to the user.
+    print(" Student Course Registration System ")
     print("1. Add Student")
     print("2. View Students")
     print("3. Search Student")
@@ -19,6 +22,7 @@ def display_menu():
 
 
 def main():
+    """Run the interactive registration system loop."""
     system = SchoolSystem()
     default_file = "data/data.json"
     system.load_data(default_file)

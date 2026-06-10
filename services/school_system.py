@@ -4,22 +4,25 @@ import os
 from models.student import Student
 from models.course import Course
 
-
 class SchoolSystem:
+    
     def __init__(self):
         self.students = []
         self.courses = []
         self.registrations = []
 
     def find_student(self, student_id):
+        """Return a Student object matching the given ID, or None if missing."""
         student_id = student_id.strip()
         return next((student for student in self.students if student.student_id == student_id), None)
 
     def find_course(self, course_id):
+        """Return a Course object matching the given ID, or None if missing."""
         course_id = course_id.strip()
         return next((course for course in self.courses if course.course_id == course_id), None)
 
     def student_registered(self, student_id, course_id):
+        """Return True if the student is already registered for the course."""
         student_id = student_id.strip()
         course_id = course_id.strip()
         return any(
@@ -28,10 +31,12 @@ class SchoolSystem:
         )
 
     def registration_count(self, course_id):
+        """Return the number of students currently registered in a course."""
         course_id = course_id.strip()
         return sum(1 for reg in self.registrations if reg["course_id"] == course_id)
 
     def add_student(self, student):
+        """Validate and add a new student to the system."""
         if not isinstance(student, Student):
             print("Invalid student object.")
             return False
@@ -57,6 +62,7 @@ class SchoolSystem:
         return True
 
     def add_course(self, course):
+        """Validate and add a new course to the system."""
         if not isinstance(course, Course):
             print("Invalid course object.")
             return False
@@ -82,6 +88,7 @@ class SchoolSystem:
         return True
 
     def register_student_to_course(self, student_id, course_id):
+        """Register a student for a course if both exist and the course has space."""
         student = self.find_student(student_id)
         if not student:
             print("Student not found.")
@@ -105,6 +112,7 @@ class SchoolSystem:
         return True
 
     def view_students(self):
+        """Print all students currently registered in the system."""
         if not self.students:
             print("No students found.")
             return
@@ -115,6 +123,7 @@ class SchoolSystem:
             print("-" * 30)
 
     def view_courses(self):
+        """Print all courses currently available in the system."""
         if not self.courses:
             print("No courses found.")
             return
@@ -125,6 +134,7 @@ class SchoolSystem:
             print("-" * 30)
 
     def view_student(self, student_id):
+        """Print a single student's details by ID."""
         student = self.find_student(student_id)
         if not student:
             print("Student not found.")
@@ -133,6 +143,7 @@ class SchoolSystem:
         print(student.display())
 
     def search_student(self, query):
+        """Search students by ID, name, or email and print matching results."""
         query = query.strip().lower()
         results = [
             student for student in self.students
@@ -151,6 +162,7 @@ class SchoolSystem:
             print("-" * 30)
 
     def view_students_in_course(self, course_id):
+        """Print all students enrolled in a given course."""
         course = self.find_course(course_id)
         if not course:
             print("Course not found.")
@@ -173,6 +185,7 @@ class SchoolSystem:
             print("-" * 30)
 
     def view_courses_for_student(self, student_id):
+        """Print all courses in which a student is enrolled."""
         student = self.find_student(student_id)
         if not student:
             print("Student not found.")
@@ -195,6 +208,7 @@ class SchoolSystem:
             print("-" * 30)
 
     def save_data(self, filename):
+        """Write the current students, courses, and registrations to JSON."""
         if not filename:
             print("Filename cannot be empty.")
             return False
@@ -236,6 +250,7 @@ class SchoolSystem:
             return False
 
     def load_data(self, filename):
+        """Load students, courses, and registrations from a JSON file."""
         if not filename:
             print("Filename cannot be empty.")
             return False
